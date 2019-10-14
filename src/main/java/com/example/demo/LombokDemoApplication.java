@@ -9,7 +9,7 @@ public class LombokDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(LombokDemoApplication.class, args);
 
-        System.out.println("Hello world");
+        System.out.println("Hell world");
     }
 
 }
