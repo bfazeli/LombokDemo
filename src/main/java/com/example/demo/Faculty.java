@@ -11,6 +11,4 @@ public class Faculty {
 	//top of a method when a method parameter is annotated with @NonNull
 	private @NonNull String name;
 	private String department;
-	
-
 }

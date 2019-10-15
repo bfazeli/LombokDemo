@@ -1,11 +1,18 @@
 package com.example.demo;
 
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.awt.datatransfer.SystemFlavorMap;
+
+
 @SpringBootApplication
+@Slf4j
 public class LombokDemoApplication {
 
+    @SneakyThrows
     public static void main(String[] args) {
         SpringApplication.run(LombokDemoApplication.class, args);
         
@@ -31,23 +38,35 @@ public class LombokDemoApplication {
         	System.out.println("Alex's hash code: " + alex.hashCode());
         	System.out.println("Alex's clone's hash code: " + alexClone.hashCode());
         	System.out.println("James' hash code: " + james.hashCode());
-        }     
+        }
         
         //Create Faculty and test @Data and @NonNull
         try
-        { 
+        {
         	//Will throw NPE because Faculty.name is annotated with @NonNull
         	Faculty joe = new Faculty(3, null);             
-        } 
-        catch(NullPointerException e) 
-        { 
-            System.out.println(e); 
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println(e);
             Faculty joe = new Faculty(3, "Joe");
             joe.setDepartment(null);
             System.out.println(joe);
-        } 
-        
-     
-      
+        }
+
+
+        // MARK: Bijan's 42
+        // Lombok student builder
+        StudentBuilder studentA = StudentBuilder.builder()
+                .name("Bijan")
+                .age(28)
+                .course("CS5320")
+                .course("CS3220")
+                .build();
+
+        System.out.println(studentA);
+
+//        CAN I DO THIS.....??? hmmmmmmmmmmmm
+//        studentA.courses.add("FIRE");
     }
 }
