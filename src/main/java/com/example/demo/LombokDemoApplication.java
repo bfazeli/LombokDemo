@@ -1,11 +1,13 @@
 package com.example.demo;
 
 import lombok.SneakyThrows;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.awt.datatransfer.SystemFlavorMap;
+import java.util.Scanner;
 
 
 @SpringBootApplication
@@ -68,5 +70,25 @@ public class LombokDemoApplication {
 
 //        CAN I DO THIS.....??? hmmmmmmmmmmmm
 //        studentA.courses.add("FIRE");
+        
+       //Paul Getter(lazy=true)
+        val bank = new LombokBank("The Bank of Paul", "123 Fake St", "(310) 555-9478", 94567.98);
+        
+        System.out.println(bank);
+        
+        LombokBank bank2 = bank.withPhoneNumber("(310) 555-9999");
+        
+        System.out.println(bank2);
+        
+        var number = 10;
+        System.out.printf("number is set to int based on %d being the value\n", number);
+        
+        @Cleanup Scanner input = new Scanner(System.in);
+        System.out.println("Input anything!");
+        String userInput = input.next();
+        System.out.println(userInput);
+        
+        
+        
     }
 }
