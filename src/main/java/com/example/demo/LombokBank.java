@@ -3,7 +3,7 @@ package com.example.demo;
 import lombok.*;
 import lombok.experimental.NonFinal;
 
-@ Value public class LombokBank {
+@Value public class LombokBank {
 
 	@Getter(lazy=true) private final double CEOSalary = salaryCalculator();
 	String name;
