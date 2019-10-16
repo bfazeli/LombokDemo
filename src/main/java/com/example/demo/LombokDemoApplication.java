@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 
 @SpringBootApplication
-@Slf4j
 public class LombokDemoApplication {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(LombokDemoApplication.class);
 
     @SneakyThrows
     public static void main(String[] args) {
@@ -59,14 +59,16 @@ public class LombokDemoApplication {
 
         // MARK: Bijan's 42
         // Lombok student builder
-        StudentBuilder studentA = StudentBuilder.builder()
-                .name("Bijan")
-                .age(28)
-                .course("CS5320")
-                .course("CS3220")
-                .build();
-
-        System.out.println(studentA);
+//        log.info("Going to build a student and print it out");
+//
+//        StudentBuilder studentA = StudentBuilder.builder()
+//                .name("Bijan")
+//                .age(28)
+//                .course("CS5320")
+//                .course("CS3220")
+//                .build();
+//
+//        System.out.println(studentA);
 
 //        CAN I DO THIS.....??? hmmmmmmmmmmmm
 //        studentA.courses.add("FIRE");

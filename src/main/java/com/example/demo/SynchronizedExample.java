@@ -4,10 +4,12 @@ import lombok.Synchronized;
 
 public class SynchronizedExample {
     private final Object readLock = new Object();
+    private static final Object $LOCK = new Object[0];
 
-    @Synchronized
     public static void hello() {
-        System.out.println("world");
+        synchronized ($LOCK) {
+            System.out.println("world");
+        }
     }
 
     @Synchronized

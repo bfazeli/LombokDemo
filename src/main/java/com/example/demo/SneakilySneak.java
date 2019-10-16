@@ -24,6 +24,6 @@ public class SneakilySneak {
 
     public static void secondLevel() throws IOException {
         System.out.println("You think you're SO cool with your logs?");
-        throw new IOException("Well u can just GTFO");
+        throw new IOException(" >:D ");
     }
 }
